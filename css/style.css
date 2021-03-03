@@ -110,15 +110,12 @@ video{
   align-items: center;
 } */
 .head-copy {
-  /* width: auto;
-  height: 100vh; */
   position: absolute;
   top: 50%;
   left: auto;
   transform: translateY(-50%);
   -webkit- transform: translateY(-50%);
   z-index: 2;
-  /* height: 70vh; */
   color: #F7F7F7;
 }
 .nav-area{
@@ -196,10 +193,8 @@ header h1{
 }
 .video-wrapper{
   position: relative;
-  /* -webkit-box-align: center;
-      -ms-flex-align: center; */
-          align-items: center;
-  padding-bottom: 100%;
+  align-items: center;
+  /* padding-bottom: 100%; */
 }
 .video-wrapper video{
   position: absolute;
@@ -207,7 +202,6 @@ header h1{
   left: 0;
   width: 670px;
   height: 400px;
-  /* -o-object-fit: cover; */
   object-fit: cover;
   outline: none;
 }
@@ -244,6 +238,9 @@ header h1{
   }
 }
 @media screen and (max-width:768px){
+  .works-box{
+    justify-content: center;
+  }
   .works-no{
     top: auto;
     bottom: -20px;
@@ -252,6 +249,10 @@ header h1{
   
   .worksleft h3{
     padding-bottom: 5rem;
+  }
+  .worksleft{
+    width: 420px;
+    height: 250px;
   }
   .video-wrapper video{
     width: 420px;
@@ -268,6 +269,20 @@ header h1{
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
+  .worksleft{
+      width: 420px;
+      height: 230px;
+  }
+  .video-wrapper video{
+    width: 420px;
+    object-fit: cover;
+  }
+  .video-wrapper {
+    width: 420px;
+  }
+  .worksright{
+    width: 420px;
+    height: 250px;
 }
 
 
