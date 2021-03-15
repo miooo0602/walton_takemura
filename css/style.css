@@ -104,10 +104,9 @@ video{
 }
 .head-logo{
   position: absolute;
-  z-index: 2;
-  top: 10px;
+  z-index: 100;
+  top: 20px;
   left: auto;
-  padding-left: 1rem;
 }
 .head-copy {
   position: absolute;
@@ -115,11 +114,13 @@ video{
   left: auto;
   transform: translateY(-50%);
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 1;
   color: #F7F7F7;
 }
 .nav-area{
-  padding:1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 header h2{
   font-size: 1.2rem;
@@ -136,16 +137,122 @@ header .button-area{
   text-align: start;
   padding-bottom: 5rem;
 }
-@media screen and (max-width:576px){
-.head-logo img{
-  width: 85%;
+
+/* ナビ */
+/* ハンバーガー */
+.btn-hum{
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+  
 }
+
+.hum-line span,
+.hum-line span::before,
+.hum-line span::after{
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #fff;
+  transition: 0.3s;
+  position: absolute;
+}
+.hum-line span::before{
+  bottom: 8px;
+}
+.hum-line span::after{
+  top: 8px;
+}
+
+.hum-active span{
+  background: rgba(255, 255, 255, 0);
+}
+
+.hum-active span::before{
+  bottom: 0;
+  transform: rotate(45deg);
+}
+.hum-active span::after{
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* メニュー */
+.nav-area{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000002;
+}
+
+.menu-area{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #212329ef;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  opacity: 0;
+  transform: translateX(-500px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.open-menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: #333;
+  text-align: center;
+  padding-top: 3rem;
+}
+.open-menu a{
+  color: #fff;
+}
+.open-menu a:hover{
+  color:  #20A1B8;
+  border: none;
+  outline: none;
+}
+.open-menu a:active{
+
+}
+.open-menu li{
+  padding-bottom: 3rem;
+  font-size: 1.2rem;
+}
+.active-menu{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media screen and (max-width:768px){
+  .head-logo img{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width:576px){
 header h2{
-  font-size: 1rem;
-  line-height: 2rem;
+  padding-top: 3rem;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  padding-bottom: 0.8rem;
 }
 header h1{
   font-size: 3rem;
+  padding-bottom: 0.8rem;
 }
 .video-wrap{
   height: 400px;
@@ -250,11 +357,12 @@ header h1{
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
   }
   .works-box{
+    display: flex;
     justify-content: center;
-    text-align: center;
+    margin: 0 auto;
   }
   .works-no{
     top: auto;
