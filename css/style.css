@@ -197,7 +197,7 @@ header .button-area{
   background-color: #212329ef;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 100;
   opacity: 0;
   transform: translateX(-500px);
   transition: opacity 0.5s, transform 0.5s;
@@ -212,6 +212,7 @@ header .button-area{
   color: #333;
   text-align: center;
   padding-top: 3rem;
+  
 }
 .open-menu a{
   color: #fff;
